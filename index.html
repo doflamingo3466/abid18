@@ -1,1 +1,75 @@
-jakjk
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhamad ABid</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container py-4">
+    <h2 class="mb-4">User Management</h2>
+
+    <div class="card p-3 mb-4">
+        <form id="userForm">
+            <input type="hidden" id="editIndex" value="-1">
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" id="name" class="form-control"
+                        placeholder="Enter full name" required
+                        oninput="this.value = this.value.replace(/[^a-zA-Z ]/g, '')">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="email" class="form-label">Email</label>'')">
+                    <input type="email" id="email" class="form-control"
+                        placeholder="example@email.com" required maxlength="100">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input type="tel" id="phone" class="form-control"
+                        placeholder="Enter phone number" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="city" class="form-label">City</label>
+                    <input type="text" id="city" class="form-control"
+                        placeholder="Enter city" required
+                        minlength="2" maxlength="50"
+                        pattern="[A-Za-z ]+">
+                </div>
+            </div>
+
+            <button type="submit" id="saveBtn" class="btn btn-outline-success">Add User</button>
+            <button type="reset" class="btn btn-outline-secondary" onclick="clearForm()">Clear</button>
+        </form>
+    </div>
+
+    <h4 class="mb-3">User Records</h4>
+
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered align-middle">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>City</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="userList"></tbody>
+        </table>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
